@@ -28,7 +28,7 @@ pipeline {
             steps{
                 script{
                     withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhubpwd')]) {
-                        bat 'docker login -u utsamatech -p $dockerhubpwd'
+                        bat 'docker login -u utsamatech -p ${dockerhubpwd}'
                         }
 
                         bat 'docker push utsamatech/utsama-devops-integration'
